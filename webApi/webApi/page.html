@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulproducts = $('#productUl');
+            
+            $('#btn').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/Values/',
+                    dataType: 'json',
+                    success: function (data) {
+                        ulproducts.empty();
+                        $.each(data, function (index, value) {
+                            var name = value.name;
+                            ulproducts.append('<li>' + name + '</li>');
+                            console.log(value.id);
+                        });
+                    }
+                });
+            });
+            $('#btnclear').click(function () {
+                ulproducts.empty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" id="btn" value="display all product" />
+        <input type="button" id="btnclear" value="clear" />
+        <ul id="productUl"></ul>
+    </div>
+</body>
+</html>

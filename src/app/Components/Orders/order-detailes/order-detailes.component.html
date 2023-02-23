@@ -1,0 +1,30 @@
+<div >
+<table class="table tble-bordered">
+    <thead>
+        <tr class="bg-dark text-white ">
+            <th>Name</th>
+            <th>Avaliabe Quantity</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <!-- <th>View Details</th> -->
+            <th>View Details</th>
+            <th>Add To Card</th>
+            <th>Edit Product</th>
+            <th>Delete Product</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let prd of ProductList">
+        <tr>
+        <td>{{prd.name}}</td>
+        <td>{{prd.quantity}}</td>
+        <td>{{prd.price}} $</td>
+        <td><input #PCount type="number"></td>
+        <!-- <td><a href="{{'/Product/'+prd.id}}" class="btn btn-primary" value="ViewDetails">View Details</a></td> -->
+        <td><input type="button" (click)="ViewProudctDetails(prd.id)"  class="btn btn-primary" value="View Details"></td>
+        <td><input type="button" (click)="UpdateTotalCount(prd.price, PCount.value)" class="btn btn-primary" value="Add"></td>
+        <td><input type="button" (click)="goEdit(prd.id)" class="btn btn-primary" value="Edit"></td>
+        <td><input type="button" (click)="deleteProduct(prd.id)" class="btn btn-danger" value="Delete"></td>  
+    </tr>
+    </tbody>
+</table>
+</div>
