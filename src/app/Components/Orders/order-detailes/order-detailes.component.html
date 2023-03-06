@@ -1,0 +1,18 @@
+
+
+<div style="width: 100%;">      
+<div *ngFor="let prd of ProductList" class="card" style="width: 18rem; float: left;margin: 10px;">
+    <img class="card-img-top" src="https://dummyimage.com/300x200/6e636e/bfc1db&text=Product" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Name: {{prd.name}}</h4>
+      <p class="card-text">
+        <h3>Price:${{prd.price}}</h3>
+        <h3>Quantity: {{prd.quantity}}</h3>
+        <div style="text-align: center;">
+            <input style="margin-right: 20px;" type="image" src="/assets/images/details.png" (click)="ViewProudctDetails(prd.id)">
+            <input style="margin-right: 20px;" type="image"  src="/assets/images/edit.png" (click)="goEdit(prd.id)">
+            <input  type="image"  src="/assets/images/delete.png" (click)="deleteProduct(prd.id)" >
+        </div>
+    </div>
+  </div>
+</div>
