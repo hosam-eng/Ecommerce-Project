@@ -1,0 +1,19 @@
+<hr>
+
+<nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+        <ul class="navbar-nav">
+          <li *ngFor="let cat of categoryList" class="nav-item">
+            <button class="btn btn-outline-secondary" (click)="onclicked(cat.id)">{{cat.name}}</button>
+          </li>
+        </ul>
+</nav>
+
+    <!-- <select #selitem [(ngModel)]="catID"  class="form-select"  data-width="50%">
+        <option selected disabled>Select an Option</option>
+        <option *ngFor="let cat of categoryList" [value]="cat.id">{{cat.name}}</option>
+    </select> -->
+
+<div>
+    <app-order-detailes  [SelCatID]="catID" (TotalPriceChanged)="OnTotalPriceChanged($event)"></app-order-detailes>
+</div>
+
