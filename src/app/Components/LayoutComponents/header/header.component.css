@@ -1,0 +1,15 @@
+
+
+nav li button{
+    background-color: none;
+    color: #252525;
+    font-weight: bold;
+    }
+nav li button:hover{
+        color:darkgray;
+        background-color:transparent!important;
+        }
+.banner_section {
+   background-image: url("/assets/images/banner1.png");
+   opacity: 1;
+}
